@@ -19,12 +19,18 @@ dependencies:
       url: https://github.com/quochoang228/logs.git
       ref: main
   di:
-    path: ../di
+    git:
+      url: https://github.com/quochoang228/di.git
+      ref: main
   utils:
-    path: ../utils
+    git:
+      url: https://github.com/quochoang228/utils.git
+      ref: main
 
   auth:
-    path: ../auth
+    git:
+      url: https://github.com/quochoang228/auth.git
+      ref: main
 
 dev_dependencies:
   flutter_test:
