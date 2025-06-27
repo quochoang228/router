@@ -76,7 +76,8 @@ class RouterService extends ChangeNotifier {
         .map((e) => e.path)
         .toSet();
     _router = GoRouter(
-      navigatorKey: navigatorKey, // Thêm navigatorKey vào GoRouter
+      navigatorKey:
+          RouterService.navigatorKey, // Thêm navigatorKey vào GoRouter
       initialLocation: '/',
       redirect: AppRouterGuard.guard3,
       debugLogDiagnostics: false,
@@ -98,6 +99,9 @@ class RouterService extends ChangeNotifier {
   // }
   //
   GoRouter get router => Dependencies().getIt<RouterService>()._router;
+
+  /// Lấy RouterService instance từ GetIt
+  static RouterService get instance => Dependencies().getIt<RouterService>();
 
   /// Lấy NavigatorState hiện tại từ GlobalKey
   static NavigatorState? get currentNavigator => navigatorKey.currentState;
